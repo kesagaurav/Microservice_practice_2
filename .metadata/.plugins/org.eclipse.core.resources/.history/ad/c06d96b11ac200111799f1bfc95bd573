@@ -1,0 +1,5 @@
+package com.gaurav.config;
+
+public class LoadBalancerConfig {
+
+}

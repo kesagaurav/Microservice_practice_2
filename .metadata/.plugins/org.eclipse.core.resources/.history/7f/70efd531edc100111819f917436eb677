@@ -1,0 +1,12 @@
+package com.gaurav.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Employee {
+
+	private int eid;
+	private String name;
+	private String dept;
+	private double sal;
+}

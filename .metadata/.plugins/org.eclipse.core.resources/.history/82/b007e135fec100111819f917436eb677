@@ -1,0 +1,62 @@
+package com.gaurav.dto;
+
+import com.gaurav.model.Employee;
+
+public class EmployeeDTO {
+	private Integer eid;
+	private String name;
+	private String dept;
+	private double sal;
+	
+	public Integer getEid() {
+		return eid;
+	}
+	public void setEid(Integer eid) {
+		this.eid = eid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDept() {
+		return dept;
+	}
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+	public double getSal() {
+		return sal;
+	}
+	public void setSal(double sal) {
+		this.sal = sal;
+	}
+	public EmployeeDTO() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "EmployeeDTO [eid=" + eid + ", name=" + name + ", dept=" + dept + ", sal=" + sal + "]";
+	}
+	
+	
+	public static EmployeeDTO entityToDTO(Employee e) {
+		EmployeeDTO edto = new EmployeeDTO();
+		edto.setEid(e.getEid());
+		edto.setName(e.getName());
+		edto.setSal(e.getSal());
+		edto.setDept(e.getDept());
+		return edto;
+		
+	}
+	
+	public Employee createEntity() {
+		Employee e = new Employee();
+		e.setName(this.getName());
+		e.setDept(this.getDept());
+		e.setSal(this.getSal());
+		return e;
+	}
+}

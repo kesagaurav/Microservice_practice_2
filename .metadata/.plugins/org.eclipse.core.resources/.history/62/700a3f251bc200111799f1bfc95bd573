@@ -1,0 +1,12 @@
+package com.gaurav.config;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class LoadBalancerConfig {
+	@Bean
+	  @Primary
+	  ServiceInstanceListSupplier serviceInstanceListSupplier() {
+	    return new DemoServiceInstanceListSuppler("FriendFamilyMS");
+	  }
+}

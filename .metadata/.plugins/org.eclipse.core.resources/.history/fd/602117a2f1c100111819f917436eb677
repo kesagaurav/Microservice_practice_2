@@ -1,0 +1,48 @@
+package com.gaurav.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.gaurav.dto.EmployeeDTO;
+import com.gaurav.exception.EmployeeException;
+import com.gaurav.service.EmployeeService;
+
+@RestController
+public class EmployeeController {
+	@Autowired
+	private EmployeeService eser;
+
+	public  ResponseEntity<EmployeeDTO> createEmployee(EmployeeDTO edto) {
+		// TODO Auto-generated method stub
+		return new ResponseEntity<EmployeeDTO>(eser.createEmployee(edto), HttpStatus.ACCEPTED);
+	}
+
+
+	public ResponseEntity<List<EmployeeDTO>> getAllEmployees() {
+		// TODO Auto-generated method stub
+		return new ResponseEntity<List<EmployeeDTO>>(eser.getAllEmployees(), HttpStatus.ACCEPTED);
+	}
+
+
+	public ResponseEntity<EmployeeDTO> getById(int eid) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return new ResponseEntity<EmployeeDTO>(eser.getById(eid), HttpStatus.ACCEPTED);
+	}
+
+
+	public ResponseEntity<EmployeeDTO> updateEmployee(EmployeeDTO edto, int eid) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return new ResponseEntity<EmployeeDTO>(eser.updateEmployee(edto,eid), HttpStatus.ACCEPTED);;
+	}
+
+
+	public ResponseEntity<EmployeeDTO> delete(int eid) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

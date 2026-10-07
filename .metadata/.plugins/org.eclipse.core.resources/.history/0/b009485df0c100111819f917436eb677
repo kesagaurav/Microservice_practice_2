@@ -1,0 +1,49 @@
+package com.gaurav.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.gaurav.dto.EmployeeDTO;
+import com.gaurav.exception.EmployeeException;
+import com.gaurav.model.Employee;
+import com.gaurav.repository.EmployeeRepository;
+import com.gaurav.service.EmployeeService;
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+	@Autowired
+	private EmployeeRepository erepo;
+	@Override
+	public EmployeeDTO createEmployee(EmployeeDTO edto) {
+		// TODO Auto-generated method stub
+		Employee createEntity = edto.createEntity();
+		
+		return EmployeeDTO.entityToDTO(createEntity);
+	}
+
+	@Override
+	public List<EmployeeDTO> getAllEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EmployeeDTO getById(int eid) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EmployeeDTO updateEmployee(EmployeeDTO edto, int eid) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EmployeeDTO delete(int eid) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
